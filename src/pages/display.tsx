@@ -22,11 +22,11 @@ export default function Display({ }: Props) {
     const [value, setValue] = React.useState(0);
     const router = useRouter()
     return (
-        <Box sx={{ height: '100vh', bgcolor: '#FFEEEE', pb: 20, 
+        <Box sx={{ height: '100vh', bgcolor: '#FFEEEE', pb: 20,
             display: 'flex', flexDirection: 'column' }}>
 
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 10, mr: 2 }}>
-                <ChangeCircleIcon sx={{ fontSize: '60px' }} />
+                <ChangeCircleIcon sx={{ fontSize: '40px' }} />
             </Box>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', mt: 8 }}>

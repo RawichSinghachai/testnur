@@ -64,8 +64,6 @@ export default function register({ }: Props) {
 
                     <TextField label="รหัสผ่าน" variant="outlined" sx={{ my: 2 }} />
 
-                    <TextField label="ยืนยันรหัสผ่าน" variant="outlined" />
-
                     <Typography variant='h6' sx={{ py: 2 }}>AND</Typography>
 
                     <TextField label="ขื่อ-นามสกุล" variant="outlined" sx={{ pb: 2 }} />
@@ -96,7 +94,7 @@ export default function register({ }: Props) {
                 </Paper>
 
                 <Stack direction="row" justifyContent="center">
-                    <Button variant="contained" sx={{ mt: 4 }}>
+                    <Button variant="contained" sx={{ my: 4 }}>
                         Confirm
                     </Button>
                 </Stack>

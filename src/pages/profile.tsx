@@ -33,22 +33,23 @@ export default function profile({ }: Props) {
                     </Paper>
                 </Box>
 
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end',pt:4 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt: 4 }}>
                     <Typography variant="h6" >
                         +เพิ่มทารก
                     </Typography>
                 </Box>
 
-                <Box sx={{ bgcolor: 'white', p: 2, borderRadius: 4 ,maxWidth:"500px"}}>
+
+                <Box sx={{ bgcolor: 'white', p: 2, mb:4,borderRadius: 4, maxWidth: "500px" }}>
                     <Stack direction="row" justifyContent="flex-start" sx={{ mb: 1 }}>
                         <AccountCircleIcon sx={{ fontSize: '40px' }} />
                         <Typography variant="h4" >
                             น้องA
                         </Typography>
                     </Stack>
-                    <Divider sx={{ bgcolor: 'black',mt:2 }} />
+                    <Divider sx={{ bgcolor: 'black', mt: 2 }} />
 
-                    <Stack direction="row" justifyContent="space-evenly" sx={{mt:1}}>
+                    <Stack direction="row" justifyContent="space-evenly" sx={{ mt: 1 }}>
                         <Stack direction="column" justifyContent="flex-start" >
                             <Typography variant="h6">ตรวจครั้งที่ 1 วันที่ 2/6/66</Typography>
                         </Stack>
@@ -60,9 +61,9 @@ export default function profile({ }: Props) {
                         </Stack>
                     </Stack>
 
-                    <Divider sx={{ bgcolor: 'black',mt:2 }} />
+                    <Divider sx={{ bgcolor: 'black', mt: 2 }} />
 
-                    <Stack direction="row" justifyContent="space-evenly" sx={{mt:1}}>
+                    <Stack direction="row" justifyContent="space-evenly" sx={{ mt: 1 }}>
                         <Stack direction="column" justifyContent="flex-start" >
                             <Typography variant="h6">ตรวจครั้งที่ 2 วันที่ 2/6/66</Typography>
                         </Stack>
@@ -87,11 +88,11 @@ export default function profile({ }: Props) {
                         value={4}
                         onChange={(event, newValue) => setValue(newValue)}
                     >
-          <BottomNavigationAction label="เครื่องชั้ง" icon={<HomeIcon />}  onClick={()=>{router.push('/home')}} />
-          <BottomNavigationAction label="แปลผล" icon={<AddchartIcon />} onClick={()=>{router.push('/display')}}/>
-          <BottomNavigationAction label="คำแนะนำ" icon={<FavoriteIcon />} onClick={()=>{router.push('/advice')}}/>
-          <BottomNavigationAction label="ติดต่อเรา" icon={<ForumIcon />} />
-          <BottomNavigationAction label="โปรไฟล์" icon={<AccountCircleIcon />} onClick={() => { router.push('/profile') }}/>
+                        <BottomNavigationAction label="เครื่องชั้ง" icon={<HomeIcon />} onClick={() => { router.push('/home') }} />
+                        <BottomNavigationAction label="แปลผล" icon={<AddchartIcon />} onClick={() => { router.push('/display') }} />
+                        <BottomNavigationAction label="คำแนะนำ" icon={<FavoriteIcon />} onClick={() => { router.push('/advice') }} />
+                        <BottomNavigationAction label="ติดต่อเรา" icon={<ForumIcon />} />
+                        <BottomNavigationAction label="โปรไฟล์" icon={<AccountCircleIcon />} onClick={() => { router.push('/profile') }} />
                     </BottomNavigation>
                 </Paper>
             </Box>

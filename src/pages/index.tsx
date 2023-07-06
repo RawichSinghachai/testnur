@@ -16,17 +16,17 @@ type Props = {}
 function index({ }: Props) {
   return (
     <div style={{
-      backgroundColor: '#FFEEEE', height: '100vh',
+      backgroundColor: '#FFEEEE', height: '100vh',width:'100%',
       display: 'flex', flexDirection: 'column'
     }}>
       <Box sx={{ display: 'column', p: 2 }}>
 
-        <Box sx={{ bgcolor: 'red',display:'flex',justifyContent:'center',my:8}}>
-          <Image height={250} width={250} src={logo} alt='logo'/>
+        <Box sx={{ display:'flex',justifyContent:'center',my:8}}>
+          <Image height={300} width={300} src={logo} alt='logo'/>
         </Box>
 
 
-        <Typography variant="body2" sx={{ textAlign: 'center', mt: 2 }}>
+        <Typography variant="h5" sx={{ textAlign: 'center', mt: 2 }}>
           ลงชื่อเข้าใช้งาน
         </Typography>
 

@@ -15,6 +15,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ForumIcon from '@mui/icons-material/Forum';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
+
 import { useRouter } from 'next/router'
 
 export default function Home() {
@@ -51,7 +52,7 @@ export default function Home() {
           onChange={(event, newValue) => setValue(newValue)}
         >
           <BottomNavigationAction label="เครื่องชั้ง" icon={<HomeIcon />}  onClick={()=>{router.push('/home')}} />
-          <BottomNavigationAction label="แปลผล" icon={<AddchartIcon />} onClick={()=>{router.push('/display')}}/>
+          <BottomNavigationAction label="แปลผล" icon={<AddchartIcon />} onClick={()=>{router.push('/display')}} />
           <BottomNavigationAction label="คำแนะนำ" icon={<FavoriteIcon />} onClick={()=>{router.push('/advice')}}/>
           <BottomNavigationAction label="ติดต่อเรา" icon={<ForumIcon />} />
           <BottomNavigationAction label="โปรไฟล์" icon={<AccountCircleIcon />} onClick={() => { router.push('/profile') }}/>
