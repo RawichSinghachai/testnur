@@ -20,18 +20,21 @@ type Props = {}
 export default function register({ }: Props) {
     const [age, setAge] = React.useState('');
     const [value, setValue] = React.useState(null);
-    
+
     const formattedDate = moment(value).format('YYYY-MM-DD');
     console.log(value);
     console.log(formattedDate);
-    
+
 
     const handleChange = (event: SelectChangeEvent) => {
         setAge(event.target.value as string);
     };
     return (
         <div >
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', bgcolor: '#FFEEEE', height: '100%', p: 2 }}>
+            <Box sx={{
+                display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundImage: 'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
+                height: '100%', p: 2
+            }}>
 
                 <Box sx={{ pb: 2, mt: 2 }}>
                     <Stack direction="row" justifyContent="flex-start">
@@ -63,7 +66,7 @@ export default function register({ }: Props) {
                     </Select>
 
                     <TextField label="เบอร์โทรศัพท์" variant="outlined" sx={{ my: 2 }} />
-                    
+
                     <TextField label="รหัสผ่าน" variant="outlined" sx={{ mb: 2 }} />
 
                     <Typography variant='h6' sx={{ py: 2 }}>AND</Typography>
@@ -75,7 +78,7 @@ export default function register({ }: Props) {
                         onChange={handleChange}
                         displayEmpty
                         inputProps={{ 'aria-label': 'Without label' }}
-                        sx={{ width: '248px',mb:2 }}
+                        sx={{ width: '248px', mb: 2 }}
                     >
                         <MenuItem value="">
                             <em>None</em>
@@ -86,7 +89,7 @@ export default function register({ }: Props) {
                     </Select>
 
                     <LocalizationProvider dateAdapter={AdapterMoment} >
-                        <DatePicker value={value} onChange={(newValue) => setValue(newValue)} sx={{ width: '248px', }}/>
+                        <DatePicker value={value} onChange={(newValue) => setValue(newValue)} sx={{ width: '248px', }} />
                     </LocalizationProvider>
 
                     <Box sx={{ mt: 2 }}>

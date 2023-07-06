@@ -20,17 +20,19 @@ export default function Advice() {
 
   const router = useRouter()
   return (
-    <Box sx={{ height: '100vh', bgcolor: '#FFEEEE', p:2,
-     display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', }}>
+    <Box sx={{
+      height: '100vh', backgroundImage: 'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
+      p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start',
+    }}>
 
-        <Typography variant="h4" sx={{pb:6}}>
-          ช่วงอายู 1-2 ปี
-        </Typography>
+      <Typography variant="h4" sx={{ pb: 6 }}>
+        ช่วงอายู 1-2 ปี
+      </Typography>
 
 
-      <Box sx={{ display: 'flex', justifyContent: 'center' ,}}>
-        <Button sx={{ bgcolor: "#433D3D", minWidth: '200px', height: '200px',display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Typography variant="h4" sx={{color:'white'}}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', }}>
+        <Button sx={{ bgcolor: "#433D3D", minWidth: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Typography variant="h4" sx={{ color: 'white' }}>
             คำแนะนำ
           </Typography>
         </Button>
@@ -38,14 +40,14 @@ export default function Advice() {
 
 
 
-      <Typography variant="h4" sx={{py:6}}>
-          ช่วงอายู 4-6 ปี
-        </Typography>
+      <Typography variant="h4" sx={{ py: 6 }}>
+        ช่วงอายู 4-6 ปี
+      </Typography>
 
 
-      <Box sx={{ display: 'flex', justifyContent: 'center' ,}}>
-        <Button sx={{ bgcolor: "#433D3D", minWidth: '200px', height: '200px',display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Typography variant="h4" sx={{color:'white'}}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', }}>
+        <Button sx={{ bgcolor: "#433D3D", minWidth: '200px', height: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Typography variant="h4" sx={{ color: 'white' }}>
             คำแนะนำ
           </Typography>
         </Button>

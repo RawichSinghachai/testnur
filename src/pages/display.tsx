@@ -22,8 +22,10 @@ export default function Display({ }: Props) {
     const [value, setValue] = React.useState(0);
     const router = useRouter()
     return (
-        <Box sx={{ height: '100vh', bgcolor: '#FFEEEE', pb: 20,
-            display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{
+            height: '100vh', backgroundImage: 'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
+            pb: 20, display: 'flex', flexDirection: 'column'
+        }}>
 
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 10, mr: 2 }}>
                 <ChangeCircleIcon sx={{ fontSize: '40px' }} />
@@ -34,8 +36,8 @@ export default function Display({ }: Props) {
                 <Scale title={'ส่วนสูง'} value={"120"} />
             </Box>
 
-            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center',width:'100%',mt:4,}}>
-                <Button variant="contained" sx={{p:2}}>Show chart</Button>
+            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', width: '100%', mt: 4, }}>
+                <Button variant="contained" sx={{ p: 2 }}>Show chart</Button>
             </Box>
 
 

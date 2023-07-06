@@ -22,7 +22,8 @@ export default function profile({ }: Props) {
     const router = useRouter()
     return (
         <div>
-            <Box sx={{ height: '100vh', bgcolor: '#FFEEEE', pb: 20, display: 'flex', flexDirection: 'column', p: 2 }}>
+            <Box sx={{ height: '100vh', backgroundImage:'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
+             pb: 20, display: 'flex', flexDirection: 'column', p: 2 }}>
 
                 <Box>
                     <Typography variant="h4" sx={{ mr: 4 }}>

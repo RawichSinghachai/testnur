@@ -18,8 +18,8 @@ function index({ }: Props) {
   const router = useRouter()
   return (
     <div style={{
-      backgroundColor: '#FFEEEE', height: '100vh', width: '100%',
-      display: 'flex', flexDirection: 'column'
+      backgroundImage: 'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
+      height: '100vh', width: '100%',display: 'flex', flexDirection: 'column'
     }}>
       <Box sx={{ display: 'column', p: 2 }}>
 
@@ -27,20 +27,20 @@ function index({ }: Props) {
           <Image height={300} width={300} src={logo} alt='logo' />
         </Box>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8,mb:6 }}>
-          <Button variant="contained">
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8, mb: 6 }}>
+          <Button variant="contained" onClick={() => router.push("/login")}>
             เข้าสู่ระบบ
           </Button>
         </Box>
 
 
-        <Typography variant="h5" sx={{ textAlign: 'center', mb: 2 }}>
+        <Typography variant="h5" sx={{ textAlign: 'center', mb: 2 }} >
           ลงชื่อเข้าใช้งาน
         </Typography>
 
 
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <Stack direction="row" justifyContent="center" spacing={2} sx={{ p: 1 ,pb:2}}>
+          <Stack direction="row" justifyContent="center" spacing={2} sx={{ p: 1, pb: 2 }}>
 
             <Button variant="contained" startIcon={<FacebookIcon />}>
               Facebook
@@ -53,7 +53,7 @@ function index({ }: Props) {
           </Stack>
           {/* bgcolor: teal[500], ":hover": { bgcolor: teal[700] } */}
           <Stack direction="row" justifyContent="center" spacing={2} sx={{ p: 1 }}>
-            <Button variant="contained" startIcon={<EmailIcon />} onClick={()=> router.push("/register")}>
+            <Button variant="contained" startIcon={<EmailIcon />} onClick={() => router.push("/register")}>
               E-mail หรือ เบอร์โทรศัพท์
             </Button>
           </Stack>

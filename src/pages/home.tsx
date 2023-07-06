@@ -23,7 +23,8 @@ export default function Home() {
   
   const router = useRouter()
   return (
-    <Box sx={{ height: '100vh', bgcolor: '#FFEEEE', pb: 20 ,display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+    <Box sx={{ height: '100vh', pb: 20 ,backgroundImage:'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
+    display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
       {/* <AppBar sx={{ bgcolor: '#A1D7F1' }}>
         <Toolbar sx={{display:'flex',justifyContent:'space-evenly'}}>
           <h5>image</h5>
