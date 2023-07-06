@@ -40,7 +40,7 @@ export default function profile({ }: Props) {
                 </Box>
 
 
-                <Box sx={{ bgcolor: 'white', p: 2, mb:4,borderRadius: 4, maxWidth: "500px" }}>
+                <Box sx={{ bgcolor: 'white', p: 1, mb:4,borderRadius: 4, maxWidth: "500px" }}>
                     <Stack direction="row" justifyContent="flex-start" sx={{ mb: 1 }}>
                         <AccountCircleIcon sx={{ fontSize: '40px' }} />
                         <Typography variant="h4" >
@@ -51,13 +51,13 @@ export default function profile({ }: Props) {
 
                     <Stack direction="row" justifyContent="space-evenly" sx={{ mt: 1 }}>
                         <Stack direction="column" justifyContent="flex-start" >
-                            <Typography variant="h6">ตรวจครั้งที่ 1 วันที่ 2/6/66</Typography>
+                            <Typography variant="subtitle1">ตรวจครั้งที่ 1 วันที่ 2/6/66</Typography>
                         </Stack>
 
                         <Stack direction="column" justifyContent="space-evenly" >
-                            <Typography variant="h6">น้ำหนัก 40 kg</Typography>
-                            <Typography variant="h6">น้ำหนัก 40 kg</Typography>
-                            <Typography variant="h6">น้ำหนัก 40 kg</Typography>
+                            <Typography variant="subtitle1">น้ำหนัก 40 kg</Typography>
+                            <Typography variant="subtitle1">น้ำหนัก 40 kg</Typography>
+                            <Typography variant="subtitle1">น้ำหนัก 40 kg</Typography>
                         </Stack>
                     </Stack>
 
@@ -65,13 +65,13 @@ export default function profile({ }: Props) {
 
                     <Stack direction="row" justifyContent="space-evenly" sx={{ mt: 1 }}>
                         <Stack direction="column" justifyContent="flex-start" >
-                            <Typography variant="h6">ตรวจครั้งที่ 2 วันที่ 2/6/66</Typography>
+                            <Typography variant="subtitle1">ตรวจครั้งที่ 2 วันที่ 2/6/66</Typography>
                         </Stack>
 
                         <Stack direction="column" justifyContent="space-evenly" >
-                            <Typography variant="h6">น้ำหนัก 40 kg</Typography>
-                            <Typography variant="h6">น้ำหนัก 40 kg</Typography>
-                            <Typography variant="h6">น้ำหนัก 40 kg</Typography>
+                            <Typography variant="subtitle1">น้ำหนัก 40 kg</Typography>
+                            <Typography variant="subtitle1">น้ำหนัก 40 kg</Typography>
+                            <Typography variant="subtitle1">น้ำหนัก 40 kg</Typography>
                         </Stack>
                     </Stack>
 

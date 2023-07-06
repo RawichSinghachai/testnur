@@ -10,29 +10,37 @@ import EmailIcon from '@mui/icons-material/Email';
 import logo from '../../public/logo.png'
 import { red, lightBlue, grey, indigo, teal, yellow, blueGrey } from '@mui/material/colors';
 import Image from 'next/image';
+import { useRouter } from 'next/router'
 
 type Props = {}
 
 function index({ }: Props) {
+  const router = useRouter()
   return (
     <div style={{
-      backgroundColor: '#FFEEEE', height: '100vh',width:'100%',
+      backgroundColor: '#FFEEEE', height: '100vh', width: '100%',
       display: 'flex', flexDirection: 'column'
     }}>
       <Box sx={{ display: 'column', p: 2 }}>
 
-        <Box sx={{ display:'flex',justifyContent:'center',my:8}}>
-          <Image height={300} width={300} src={logo} alt='logo'/>
+        <Box sx={{ display: 'flex', justifyContent: 'center', my: 8 }}>
+          <Image height={300} width={300} src={logo} alt='logo' />
+        </Box>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8,mb:6 }}>
+          <Button variant="contained">
+            เข้าสู่ระบบ
+          </Button>
         </Box>
 
 
-        <Typography variant="h5" sx={{ textAlign: 'center', mt: 2 }}>
+        <Typography variant="h5" sx={{ textAlign: 'center', mb: 2 }}>
           ลงชื่อเข้าใช้งาน
         </Typography>
 
 
         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <Stack direction="row" justifyContent="center" spacing={2} sx={{ p: 1 }}>
+          <Stack direction="row" justifyContent="center" spacing={2} sx={{ p: 1 ,pb:2}}>
 
             <Button variant="contained" startIcon={<FacebookIcon />}>
               Facebook
@@ -45,7 +53,7 @@ function index({ }: Props) {
           </Stack>
           {/* bgcolor: teal[500], ":hover": { bgcolor: teal[700] } */}
           <Stack direction="row" justifyContent="center" spacing={2} sx={{ p: 1 }}>
-            <Button variant="contained" startIcon={<EmailIcon />} >
+            <Button variant="contained" startIcon={<EmailIcon />} onClick={()=> router.push("/register")}>
               E-mail หรือ เบอร์โทรศัพท์
             </Button>
           </Stack>

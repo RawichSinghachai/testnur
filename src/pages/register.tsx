@@ -31,7 +31,7 @@ export default function register({ }: Props) {
     };
     return (
         <div >
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', bgcolor: '#FFEEEE', height: '100vh', p: 2 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', bgcolor: '#FFEEEE', height: '100%', p: 2 }}>
 
                 <Box sx={{ pb: 2, mt: 2 }}>
                     <Stack direction="row" justifyContent="flex-start">
@@ -62,7 +62,9 @@ export default function register({ }: Props) {
                         <MenuItem value={30}>Thirty</MenuItem>
                     </Select>
 
-                    <TextField label="รหัสผ่าน" variant="outlined" sx={{ my: 2 }} />
+                    <TextField label="เบอร์โทรศัพท์" variant="outlined" sx={{ my: 2 }} />
+                    
+                    <TextField label="รหัสผ่าน" variant="outlined" sx={{ mb: 2 }} />
 
                     <Typography variant='h6' sx={{ py: 2 }}>AND</Typography>
 

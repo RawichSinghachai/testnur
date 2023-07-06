@@ -45,14 +45,14 @@ export default function Home() {
 
 
 
-      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0,}} elevation={3}>
         <BottomNavigation
           showLabels
           value={0}
           onChange={(event, newValue) => setValue(newValue)}
         >
-          <BottomNavigationAction label="เครื่องชั้ง" icon={<HomeIcon />}  onClick={()=>{router.push('/home')}} />
-          <BottomNavigationAction label="แปลผล" icon={<AddchartIcon />} onClick={()=>{router.push('/display')}} />
+          <BottomNavigationAction label="เครื่องชั้ง" icon={<HomeIcon />}  onClick={()=>{router.push('/home')}}/>
+          <BottomNavigationAction label="แปลผล" icon={<AddchartIcon />} onClick={()=>{router.push('/display')}}/>
           <BottomNavigationAction label="คำแนะนำ" icon={<FavoriteIcon />} onClick={()=>{router.push('/advice')}}/>
           <BottomNavigationAction label="ติดต่อเรา" icon={<ForumIcon />} />
           <BottomNavigationAction label="โปรไฟล์" icon={<AccountCircleIcon />} onClick={() => { router.push('/profile') }}/>
