@@ -11,7 +11,7 @@ const handler = (req:NextApiRequest,res:NextApiResponse) =>{
   }
   else if(req.method === 'POST'){
       const {name,id} = req.body
-      console.log(`name :${name} and ${id} : id`)
+      res.send(`name :${name} and ${id} : id`)
   }
 }
 
