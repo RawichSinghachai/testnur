@@ -7,11 +7,11 @@ type Data = {
 
 const handler = (req:NextApiRequest,res:NextApiResponse) =>{
   if(req.method === 'GET'){
-      res.send('get ok')
+      res.json(status:'get ok')
   }
   else if(req.method === 'POST'){
       const {name,id} = req.body
-      res.send(`name :${name} and ${id} : id`)
+      res.json(`name :${name} and ${id} : id`)
   }
 }
 
