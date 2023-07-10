@@ -7,10 +7,12 @@ import Stack from '@mui/material/Stack';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import logo from '../../public/logo.png'
 import { red, lightBlue, grey, indigo, teal, yellow, blueGrey } from '@mui/material/colors';
 import Image from 'next/image';
 import { useRouter } from 'next/router'
+import Checkdata from '@/components/Checkdata';
 
 type Props = {}
 
@@ -19,12 +21,14 @@ function index({ }: Props) {
   return (
     <div style={{
       backgroundImage: 'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
-      height: '100vh', width: '100%',display: 'flex', flexDirection: 'column'
+      height: '100%',display: 'flex', flexDirection: 'column'
     }}>
-      <Box sx={{ display: 'column', p: 2 }}>
+      
+      <Checkdata />
+      <Box sx={{ display: 'column', p: 2,}}>
 
         <Box sx={{ display: 'flex', justifyContent: 'center', my: 8 }}>
-          <Image height={300} width={300} src={logo} alt='logo' />
+          <Image height={300} width={300} src={logo} alt='logo' priority/>
         </Box>
 
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8, mb: 6 }}>
@@ -53,8 +57,8 @@ function index({ }: Props) {
           </Stack>
           {/* bgcolor: teal[500], ":hover": { bgcolor: teal[700] } */}
           <Stack direction="row" justifyContent="center" spacing={2} sx={{ p: 1 }}>
-            <Button variant="contained" startIcon={<EmailIcon />} onClick={() => router.push("/register")}>
-              E-mail หรือ เบอร์โทรศัพท์
+            <Button variant="contained" startIcon={<LocalPhoneIcon />} onClick={() => router.push("/register")}>
+              เบอร์โทรศัพท์
             </Button>
           </Stack>
         </Box>

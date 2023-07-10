@@ -14,6 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ForumIcon from '@mui/icons-material/Forum';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useRouter } from 'next/router'
+import Checkdata from '@/components/Checkdata';
 type Props = {}
 
 export default function profile({ }: Props) {
@@ -21,16 +22,22 @@ export default function profile({ }: Props) {
     const [value, setValue] = React.useState(0);
     const router = useRouter()
     return (
-        <div>
-            <Box sx={{ height: '100vh', backgroundImage:'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
-             pb: 20, display: 'flex', flexDirection: 'column', p: 2 }}>
+        <>
+            <Checkdata />
+            <Box sx={{
+                height: '100vh', backgroundImage: 'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
+                pb: 20, display: 'flex', flexDirection: 'column', p: 2
+            }}>
 
                 <Box>
                     <Typography variant="h4" sx={{ mr: 4 }}>
                         บัญชี
                     </Typography>
-                    <Paper sx={{ bgcolor: 'white', p: 2, borderRadius: 4, mt: 2 }}>
-                        <AccountCircleIcon sx={{ fontSize: '40px' }} />
+                    <Paper sx={{ bgcolor: 'white', p: 2, borderRadius: 4, mt: 2, display: 'flex', alignItems: 'center' }}>
+                        <AccountCircleIcon sx={{ fontSize: '40px', mr: 2 }} />
+                        <Typography variant="h5" >
+                            name nickname
+                        </Typography>
                     </Paper>
                 </Box>
 
@@ -41,7 +48,7 @@ export default function profile({ }: Props) {
                 </Box>
 
 
-                <Box sx={{ bgcolor: 'white', p: 1, mb:4,borderRadius: 4, maxWidth: "500px" }}>
+                <Box sx={{ bgcolor: 'white', p: 1, mb: 4, borderRadius: 4, maxWidth: "500px" }}>
                     <Stack direction="row" justifyContent="flex-start" sx={{ mb: 1 }}>
                         <AccountCircleIcon sx={{ fontSize: '40px' }} />
                         <Typography variant="h4" >
@@ -97,6 +104,6 @@ export default function profile({ }: Props) {
                     </BottomNavigation>
                 </Paper>
             </Box>
-        </div>
+        </>
     )
 }

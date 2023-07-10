@@ -1,9 +1,13 @@
+import Checkdata from '@/components/Checkdata'
 import React from 'react'
 
 type Props = {}
 
 export default function chart({}: Props) {
   return (
-    <div>chart</div>
+    <div>
+      <Checkdata />
+      chart
+    </div>
   )
 }

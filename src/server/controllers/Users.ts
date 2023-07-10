@@ -1,13 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { MongoClient, ObjectId } from "mongodb";
-const client: any = new MongoClient(process.env.NEXT_PUBLIC_MONGODB!);
-const jwt = require("jsonwebtoken");
+import { ObjectId } from "mongodb";
+import {client,jwt,secret} from './ConfigServer'
 
-const secret = process.env.NEXT_PUBLIC_SECRET;
 
 export const findAll = async (req: NextApiRequest, res: NextApiResponse) => {
   await client.connect();
-  const users = await client.db("nurse").collection("user").find({}).toArray();
+  const users = await client.db("nurse").collection("users").find({}).toArray();
   await client.close();
   res.json(users);
 };
@@ -21,7 +19,7 @@ export const findOne = async (
   await client.connect();
   const users = await client
     .db("nurse")
-    .collection("user")
+    .collection("users")
     .findOne({ _id: objectId });
   // .toArray();
   console.log(id);
@@ -31,33 +29,32 @@ export const findOne = async (
 
 export const register = async (req: NextApiRequest, res: NextApiResponse) => {
   const {
-    parentfirstname,
-    parentlastname,
-    email,
-    password,
+    parentname,
     relation,
-    babyfirstname,
-    babylastname,
+    phone,
+    password,
+    babyname,
     babyage,
+    babysex,
     babybirthday,
-    sex,
   }: any = req.body;
   await client.connect();
   await client
     .db("nurse")
-    .collection("user")
+    .collection("users")
     .insertMany([
       {
-        parentfirstname,
-        parentlastname,
-        email,
-        password,
+        parentname,
         relation,
-        babyfirstname,
-        babylastname,
+        phone,
+        password,
+        babyname,
         babyage,
         babybirthday,
-        sex,
+        babysex,
+        height:[],
+        weight:[],
+        datetocheck:[],
         registerdate: new Date(),
       },
     ]);
@@ -66,28 +63,28 @@ export const register = async (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 export const login = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { email, password }: any = req.body;
+  const { phone, password }: any = req.body;
   try {
     await client.connect();
     const user = await client
       .db("nurse")
-      .collection("user")
-      .findOne({ $and: [{ email: email, password: password }] });
+      .collection("users")
+      .findOne({ $and: [{ phone: phone, password: password }] });
     await client.close();
     const token = jwt.sign(
       {
         id: user._id,
-        parentfirstname: user.parentfirstname,
-        parentlastname: user.parentlastname,
-        email: user.email,
-        password: user.password,
-        relation: user.relation,
-        babyfirstname: user.babyfirstname,
-        babylastname: user.babylastname,
-        babyage: user.babyage,
-        babybirthday: user.babybirthday,
-        sex: user.sex,
-        registerdate: user.registerdate,
+        parentname:user.parentname,
+        relation:user.relation,
+        phone:user.phone,
+        babyname:user.babyname,
+        babyage:user.babyage,
+        babybirthday:user.babybirthday,
+        babysex:user.babysex,
+        registerdate:user.registerdate,
+        height:user.height,
+        weight:user.weight,
+        datetocheck:user.datetocheck,
       },
       secret
     );
