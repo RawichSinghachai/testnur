@@ -59,7 +59,7 @@ export default function Display({ }: Props) {
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [userdata.id])
 
     const getData = async () => {
         if (userdata.id) {

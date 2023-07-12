@@ -38,6 +38,13 @@ useEffect(() => {
         } 
     }
 
+    if(sessionStorage.getItem('token')){
+        if(router.pathname === '/login'){
+            router.push('/home')
+        } 
+    }
+
+
 
         //when forget login block '/profile' 
     

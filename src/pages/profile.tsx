@@ -6,9 +6,13 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
+import Button from '@mui/material/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '@/stores/store';
 import axios from 'axios';
+import { pink } from '@mui/material/colors';
+import { useRouter } from 'next/router'
+import Checkdata from '@/components/Checkdata';
 
 
 import HomeIcon from '@mui/icons-material/Home';
@@ -16,8 +20,7 @@ import AddchartIcon from '@mui/icons-material/Addchart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ForumIcon from '@mui/icons-material/Forum';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useRouter } from 'next/router'
-import Checkdata from '@/components/Checkdata';
+
 type Props = {}
 
 export default function profile({ }: Props) {
@@ -42,13 +45,19 @@ export default function profile({ }: Props) {
     const router = useRouter()
     const userdata = useSelector((state: RootState) => state.UserDataStore)
 
+    const handleLogOut = () =>{
+        sessionStorage.removeItem('token')
+        router.push('/')
+    }
+
 
     useEffect(() => {
         if (userdata.id) {
             axios.get(`${process.env.NEXT_PUBLIC_URL}/api/users/${userdata.id}`)
                 .then((value: any) => setData(value.data))
         }
-    }, [])
+    }, [userdata.id])
+
 
 
 
@@ -108,11 +117,15 @@ export default function profile({ }: Props) {
                             {index + 1 === data.height.length ? <></> : <Divider sx={{ bgcolor: 'black', mt: 2 }} />}
                         </Box>
                     })}
-
-
                 </Box>
 
+                <Box sx={{ display: 'flex', justifyContent: 'center',}}>
+                    <Button variant="contained" sx={{ bgcolor: pink["A200"], ":hover": { bgcolor: pink["A100"] } }}
+                    onClick={handleLogOut}>
+                        Log out
+                    </Button>
 
+                </Box>
 
 
 
