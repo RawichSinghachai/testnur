@@ -8,7 +8,6 @@ type Props = {}
 
 const Checkdata = (props: Props) => {
     const router = useRouter()
-    const userdata = useSelector((state:RootState)=>state.UserDataStore)
     const dispatch = useDispatch()
 
 
@@ -21,8 +20,8 @@ useEffect(() => {
         token: sessionStorage.getItem('token')
     },
         { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }
-    ).then(datauser => {
-        dispatch(save(datauser.data))
+    ).then(userdata => {
+        dispatch(save(userdata.data))
         // console.log(datauser.data);
     }).catch((err) => {
         console.log('Not login in yet')
@@ -38,6 +37,7 @@ useEffect(() => {
             router.push('/login')
         } 
     }
+
 
         //when forget login block '/profile' 
     

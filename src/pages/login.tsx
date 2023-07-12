@@ -38,7 +38,9 @@ export default function login({ }: Props) {
         await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/users/login`, {
             ...form
         }).then((value) => {
-            sessionStorage.setItem('token', value.data.token)
+            if(value.data.token){
+                sessionStorage.setItem('token', value.data.token)
+            }
             setForm({
                 phone: '',
                 password: '',
