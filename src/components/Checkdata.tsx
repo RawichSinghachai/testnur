@@ -23,7 +23,7 @@ useEffect(() => {
         { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }
     ).then(datauser => {
         dispatch(save(datauser.data))
-        console.log(datauser.data);
+        // console.log(datauser.data);
     }).catch((err) => {
         console.log('Not login in yet')
         //for test
@@ -33,11 +33,11 @@ useEffect(() => {
     //block path when forget login
 
     //for test
-    // if(!sessionStorage.getItem('token')){
-    //     if(router.pathname === '/home' || router.pathname === '/display'|| router.pathname === '/chart' || router.pathname === '/advice' || router.pathname === '/profile'){
-    //         router.push('/login')
-    //     } 
-    // }
+    if(!sessionStorage.getItem('token')){
+        if(router.pathname === '/home' || router.pathname === '/display'|| router.pathname === '/chart' || router.pathname === '/advice' || router.pathname === '/profile'){
+            router.push('/login')
+        } 
+    }
 
         //when forget login block '/profile' 
     

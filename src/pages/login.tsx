@@ -13,11 +13,12 @@ import axios from 'axios';
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/stores/store';
+import { pink } from '@mui/material/colors';
 
 type Props = {}
 
 export default function login({ }: Props) {
-    
+
     const router = useRouter()
     const [form, setForm] = useState({
         phone: '',
@@ -36,7 +37,7 @@ export default function login({ }: Props) {
         e.preventDefault()
         await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/users/login`, {
             ...form
-        }).then((value)=>{
+        }).then((value) => {
             sessionStorage.setItem('token', value.data.token)
             setForm({
                 phone: '',
@@ -44,9 +45,9 @@ export default function login({ }: Props) {
             })
             router.push('/home')
         })
-        .catch(()=>{
-            console.log('login fail');
-        })
+            .catch(() => {
+                console.log('login fail');
+            })
     }
 
 
@@ -54,7 +55,7 @@ export default function login({ }: Props) {
     return (
         <div style={{
             backgroundImage: 'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
-            height: '100%', display: 'flex', flexDirection: 'column', alignItems:'center',padding: '16px'
+            height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '16px'
         }}>
 
             <Checkdata />
@@ -62,17 +63,23 @@ export default function login({ }: Props) {
                 <Image height={300} width={300} src={logo} alt='logo' priority />
             </Box>
 
-            <Box sx={{ bgcolor: 'white', display: 'flex', justifyContent: 'center', 
-                borderRadius: 4, p: 4, mb: 4 }}>
-                <Stack direction='column'>
-                    <TextField label="เบอร์โทรศัพท์" variant="outlined" sx={{ my: 2 }} name='phone' onChange={handleChange} />
+            <Box sx={{
+                bgcolor: 'white', display: 'flex', justifyContent: 'center',
+                borderRadius: 4, p: 4, mb: 4
+            }}>
 
-                    <TextField label="รหัสผ่าน" variant="outlined" sx={{ mb: 2 }} name='password' onChange={handleChange} />
+                <form autoComplete='off'>
+                    <Stack direction='column'>
+                        <TextField label="เบอร์โทรศัพท์" variant="outlined" sx={{ my: 2 }} name='phone' onChange={handleChange} />
 
-                    <Button variant="contained" sx={{ mb: 2 }} onClick={(e:any) => handlesubmit(e)}>
-                        เข้าสู่ระบบ
-                    </Button>
-                </Stack>
+                        <TextField label="รหัสผ่าน" variant="outlined" sx={{ mb: 2 }} name='password' onChange={handleChange} />
+
+                        <Button variant="contained" sx={{ mb: 2, bgcolor: pink["A200"], ":hover": { bgcolor: pink["A100"] } }} onClick={(e: any) => handlesubmit(e)}>
+                            เข้าสู่ระบบ
+                        </Button>
+                    </Stack>
+                </form>
+
             </Box>
         </div>
     )

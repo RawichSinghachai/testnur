@@ -40,7 +40,6 @@ export const createDocument = async (
     .collection("data")
     .findOne({ _id: objectId });
   if (user) {
-    ////////////
     await client.db("nurse").collection("data").deleteMany({$nor:[{_id:objectId}]})
     await client.close();
   } else {
@@ -53,4 +52,20 @@ export const createDocument = async (
     await client.close();
     res.json("created document");
   }
+};
+
+
+export const update = async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+) => {
+  const {id,height,weight,datetocheck} = req.body
+  const objectId = new ObjectId(id);
+  await client.connect();
+  const users = await client
+    .db("nurse")
+    .collection("users")
+    .updateOne({_id:objectId},{$push:{height:height,weight:weight,datetocheck:datetocheck}})
+  await client.close();
+  res.json(users);
 };

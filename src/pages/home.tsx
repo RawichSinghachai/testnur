@@ -3,13 +3,14 @@ import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '@/stores/store';
 import axios from 'axios';
+import { pink } from '@mui/material/colors';
+
+
 
 import HomeIcon from '@mui/icons-material/Home';
 import AddchartIcon from '@mui/icons-material/Addchart';
@@ -26,7 +27,6 @@ export default function Home() {
   const [value, setValue] = React.useState(0);
 
   const userdata = useSelector((state: RootState) => state.UserDataStore)
-  console.log(userdata.id);
 
   const handleClick = async() => {
     await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/device/create`,{id:userdata.id})
@@ -40,28 +40,21 @@ export default function Home() {
         height: '100vh', pb: 20, backgroundImage: 'linear-gradient(180deg, rgb(119,33,214,0.33), rgb(238,18,190,0.24) ,rgb(215,94,218,0.15) ,rgb(193,77,234,0.37))',
         display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'
       }}>
-        {/* <AppBar sx={{ bgcolor: '#A1D7F1' }}>
-        <Toolbar sx={{display:'flex',justifyContent:'space-evenly'}}>
-          <h5>image</h5>
-          <Typography >
-            Scroll to elevate App bar
-          </Typography>
-          <MenuIcon sx={{color:'#405F89'}}/>
-        </Toolbar>
-      </AppBar> */}
+
         <Box sx={{
           width: '200px', height: '100px', bgcolor: 'white', borderRadius: 4,
-          display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 4
+          display: 'flex', justifyContent: 'center', alignItems: 'center', 
         }}>
           <Typography variant="h6" sx={{ textAlign: 'center' }}>
             จับน้องยื่นขึ้น
           </Typography>
         </Box>
-        <Box sx={{ bgcolor: 'white', height: '50px' }}>
+
+        <Box sx={{ bgcolor: 'white', height: '50px' ,my: 4}}>
           image
         </Box>
 
-        <Button variant="contained" onClick={()=>handleClick()}>
+        <Button variant="contained" sx={{bgcolor: pink["A200"], ":hover": { bgcolor: pink["A100"] }}} onClick={()=>handleClick()}>
           Calculate
         </Button>
 

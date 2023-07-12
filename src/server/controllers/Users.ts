@@ -64,6 +64,15 @@ export const register = async (req: NextApiRequest, res: NextApiResponse) => {
 
 export const login = async (req: NextApiRequest, res: NextApiResponse) => {
   const { phone, password }: any = req.body;
+  
+    // await client.connect();
+    // const user = await client
+    //   .db("nurse")
+    //   .collection("users")
+    //   .findOne({ $and: [{ phone: phone, password: password }] });
+    // await client.close();
+    // res.json({ weight:user.weight });
+
   try {
     await client.connect();
     const user = await client
