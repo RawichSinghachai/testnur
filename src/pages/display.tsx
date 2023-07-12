@@ -55,20 +55,20 @@ export default function Display({ }: Props) {
 
     const userdata = useSelector((state: RootState) => state.UserDataStore)
 
-
-
-    useEffect(() => {
-        getData()
-    }, [userdata.id])
-
     const getData = async () => {
-        if (userdata.id) {
-            await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/users/${userdata.id}`)
-                .then((value: any) => setData(value.data))
-        }
+        await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/users/${userdata.id}`)
+            .then((value: any) => setData(value.data))
     }
 
-    
+    useEffect(() => {
+        if (userdata.id) {
+            getData()
+        }
+    }, [userdata.id])
+
+
+
+
     return (
         <>
             <Checkdata />
@@ -89,8 +89,8 @@ export default function Display({ }: Props) {
                 </Box>
 
                 <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', mt: 8 }}>
-                    <Scale title={'น้ำหนัก'} value={data.weight[data.height.length - 1]} unit={'kg'}/>
-                    <Scale title={'ส่วนสูง'} value={data.height[data.height.length - 1]} unit={'cm'}/>
+                    <Scale title={'น้ำหนัก'} value={data.weight[data.height.length - 1]} unit={'kg'} />
+                    <Scale title={'ส่วนสูง'} value={data.height[data.height.length - 1]} unit={'cm'} />
                 </Box>
 
                 <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', width: '100%', mt: 4, }}>

@@ -50,11 +50,14 @@ export default function profile({ }: Props) {
         router.push('/')
     }
 
+    const getData = async () => {
+        await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/users/${userdata.id}`)
+            .then((value: any) => setData(value.data))
+    }
 
     useEffect(() => {
         if (userdata.id) {
-            axios.get(`${process.env.NEXT_PUBLIC_URL}/api/users/${userdata.id}`)
-                .then((value: any) => setData(value.data))
+            getData()
         }
     }, [userdata.id])
 
