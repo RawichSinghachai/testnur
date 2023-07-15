@@ -24,8 +24,7 @@ useEffect(() => {
         dispatch(save(userdata.data))
         // console.log(datauser.data);
     }).catch((err) => {
-        console.log('Not login in yet')
-        //for test
+
     })
 
 

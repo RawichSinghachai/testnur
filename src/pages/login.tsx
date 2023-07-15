@@ -61,7 +61,7 @@ export default function login({ }: Props) {
         }}>
 
             <Checkdata />
-            <Box sx={{ display: 'flex', justifyContent: 'center', my: 8 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
                 <Image height={300} width={300} src={logo} alt='logo' priority />
             </Box>
 
@@ -70,13 +70,13 @@ export default function login({ }: Props) {
                 borderRadius: 4, p: 4, mb: 4
             }}>
 
-                <form autoComplete='off'>
+                <form autoComplete='off' onSubmit={handlesubmit}>
                     <Stack direction='column'>
                         <TextField label="เบอร์โทรศัพท์" variant="outlined" sx={{ my: 2 }} name='phone' onChange={handleChange} />
 
                         <TextField label="รหัสผ่าน" variant="outlined" sx={{ mb: 2 }} name='password' onChange={handleChange} />
 
-                        <Button variant="contained" sx={{ mb: 2, bgcolor: pink["A200"], ":hover": { bgcolor: pink["A100"] } }} onClick={(e: any) => handlesubmit(e)}>
+                        <Button variant="contained" sx={{ mb: 2, bgcolor: pink["A200"], ":hover": { bgcolor: pink["A100"] } }} type='submit'>
                             เข้าสู่ระบบ
                         </Button>
                     </Stack>

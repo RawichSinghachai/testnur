@@ -78,7 +78,7 @@ export default function register({ }: Props) {
                     </Stack>
                 </Box>
 
-                <form autoComplete='off'>
+                <form autoComplete='off' onSubmit={handleSubmit}>
                     <Paper sx={{
                         display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
                         p: 4, borderRadius: 2
@@ -134,7 +134,7 @@ export default function register({ }: Props) {
                 </form>
 
                 <Stack direction="row" justifyContent="center">
-                    <Button variant="contained" sx={{ my: 4, bgcolor: pink["A200"], ":hover": { bgcolor: pink["A100"] } }} onClick={(e: any) => handleSubmit(e)} >
+                    <Button variant="contained" sx={{ my: 4, bgcolor: pink["A200"], ":hover": { bgcolor: pink["A100"] } }} type='submit' >
                         Confirm
                     </Button>
                 </Stack>
