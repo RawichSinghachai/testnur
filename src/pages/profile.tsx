@@ -13,6 +13,7 @@ import axios from 'axios';
 import { pink } from '@mui/material/colors';
 import { useRouter } from 'next/router'
 import Checkdata from '@/components/Checkdata';
+import Skeleton from '@mui/material/Skeleton';
 
 
 import HomeIcon from '@mui/icons-material/Home';
@@ -81,7 +82,7 @@ export default function profile({ }: Props) {
                     <Paper sx={{ bgcolor: 'white', p: 2, borderRadius: 4, mt: 2, display: 'flex', alignItems: 'center' }}>
                         <AccountCircleIcon sx={{ fontSize: '40px', mr: 2 }} />
                         <Typography variant="h5" >
-                            {data.parentname}
+                            {data ? data.parentname:<Skeleton animation="wave" width={100} height={40}/>}
                         </Typography>
                     </Paper>
                 </Box>
@@ -97,7 +98,7 @@ export default function profile({ }: Props) {
                     <Stack direction="row" justifyContent="flex-start" sx={{ mb: 1 }}>
                         <AccountCircleIcon sx={{ fontSize: '40px', mr: 1 }} />
                         <Typography variant="h4" >
-                            {data.babyname}
+                            {data ? data.babyname:<Skeleton animation="wave" width={100} height={40}/>}
                         </Typography>
                     </Stack>
                     <Divider sx={{ bgcolor: 'black', mt: 2 }} />
@@ -107,12 +108,19 @@ export default function profile({ }: Props) {
                         return <Box key={index}>
                             <Stack direction="row" justifyContent="space-evenly" sx={{ mt: 1 }}>
                                 <Stack direction="column" justifyContent="flex-start" >
-                                    <Typography variant="subtitle1">ตรวจครั้งที่ {index + 1} วันที่ {data.datetocheck[index]}</Typography>
+                                    <Typography variant="subtitle1">
+                                        {data ? `ตรวจครั้งที่ ${index + 1} วันที่ ${data.datetocheck[index]}`:<Skeleton animation="wave" width={100} height={40}/>}
+                                    </Typography>
                                 </Stack>
 
                                 <Stack direction="column" justifyContent="space-evenly" >
-                                    <Typography variant="subtitle1">ส่วนสูง {data.height[index]} m</Typography>
-                                    <Typography variant="subtitle1">น้ำหนัก {data.weight[index]} kg</Typography>
+                                    <Typography variant="subtitle1">
+                                        {data ? `ส่วนสูง ${data.height[index] } m`:<Skeleton animation="wave" width={100} height={40}/>}
+                                    </Typography>
+
+                                    <Typography variant="subtitle1">
+                                        {data ? `น้ำหนัก ${data.weight[index]} kg`:<Skeleton animation="wave" width={100} height={40}/>}
+                                    </Typography>
                                     {/* <Typography variant="subtitle1">น้ำหนัก 40 kg</Typography> */}
                                 </Stack>
                             </Stack>
