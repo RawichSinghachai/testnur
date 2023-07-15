@@ -62,9 +62,14 @@ export default function profile({ }: Props) {
         }
     }, [userdata.id])
 
-
-
-
+    const df = {name:''}
+    if(df.name){
+        console.log('true');
+        
+    }else{
+        console.log('false');
+        
+    }
 
 
     return (
@@ -82,7 +87,7 @@ export default function profile({ }: Props) {
                     <Paper sx={{ bgcolor: 'white', p: 2, borderRadius: 4, mt: 2, display: 'flex', alignItems: 'center' }}>
                         <AccountCircleIcon sx={{ fontSize: '40px', mr: 2 }} />
                         <Typography variant="h5" >
-                            {data ? data.parentname:<Skeleton animation="wave" width={100} height={40}/>}
+                            {data.parentname ? data.parentname:<Skeleton animation="wave" width={100} height={40}/>}
                         </Typography>
                     </Paper>
                 </Box>
@@ -98,7 +103,7 @@ export default function profile({ }: Props) {
                     <Stack direction="row" justifyContent="flex-start" sx={{ mb: 1 }}>
                         <AccountCircleIcon sx={{ fontSize: '40px', mr: 1 }} />
                         <Typography variant="h4" >
-                            {data ? data.babyname:<Skeleton animation="wave" width={100} height={40}/>}
+                            {data.babyname ? data.babyname:<Skeleton animation="wave" width={100} height={40}/>}
                         </Typography>
                     </Stack>
                     <Divider sx={{ bgcolor: 'black', mt: 2 }} />
@@ -109,17 +114,17 @@ export default function profile({ }: Props) {
                             <Stack direction="row" justifyContent="space-evenly" sx={{ mt: 1 }}>
                                 <Stack direction="column" justifyContent="flex-start" >
                                     <Typography variant="subtitle1">
-                                        {data ? `ตรวจครั้งที่ ${index + 1} วันที่ ${data.datetocheck[index]}`:<Skeleton animation="wave" width={100} height={40}/>}
+                                        {data.datetocheck[index] ? `ตรวจครั้งที่ ${index + 1} วันที่ ${data.datetocheck[index]}`:<Skeleton animation="wave" width={100} height={40}/>}
                                     </Typography>
                                 </Stack>
 
                                 <Stack direction="column" justifyContent="space-evenly" >
                                     <Typography variant="subtitle1">
-                                        {data ? `ส่วนสูง ${data.height[index] } m`:<Skeleton animation="wave" width={100} height={40}/>}
+                                        {data.height[index] ? `ส่วนสูง ${data.height[index] } m`:<Skeleton animation="wave" width={100} height={40}/>}
                                     </Typography>
 
                                     <Typography variant="subtitle1">
-                                        {data ? `น้ำหนัก ${data.weight[index]} kg`:<Skeleton animation="wave" width={100} height={40}/>}
+                                        {data.weight[index] ? `น้ำหนัก ${data.weight[index]} kg`:<Skeleton animation="wave" width={100} height={40}/>}
                                     </Typography>
                                     {/* <Typography variant="subtitle1">น้ำหนัก 40 kg</Typography> */}
                                 </Stack>

@@ -66,9 +66,7 @@ export default function Display({ }: Props) {
         }
     }, [userdata.id])
 
-
-
-
+    
     return (
         <>
             <Checkdata />
